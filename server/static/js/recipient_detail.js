@@ -28,7 +28,7 @@ var app = new Vue({
             if (trail.type == 'Donation') {
                 return `${trail.info.name}이 $${trail.info.amount}를 Donate`;
             } else if (trail.type == 'Using Donations') {
-                return `${this.recipient.name}이(가) $${trail.info.amount}을(를) ${trail.info.name}에서  ${trail.info.message}을(를) ${trail.info.purpose}하는데 사용`;
+                return `${this.recipient.name}이(가) ${trail.info.amount}을(를) ${trail.info.name}에서  ${trail.info.message}을(를) ${trail.info.purpose}하는데 사용`;
             }
         },
         donate() {
