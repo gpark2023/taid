@@ -28,7 +28,7 @@ var app = new Vue({
             if (trail.type == 'Donation') {
                 return `${trail.info.name} donated ₩${trail.info.amount}`;
             } else if (trail.type == 'Using Donations') {
-                return `${this.recipient.name} spent ₩${trail.info.amount} ${trail.info.name} on  ${trail.info.message} buying ${trail.info.purpose}`;
+                return `${this.recipient.name} spent ₩${trail.info.amount} on ${trail.info.name} to ${trail.info.purpose} ${trail.info.message}  `;
             }
         },
         donate() {
