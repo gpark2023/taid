@@ -26,9 +26,9 @@ var app = new Vue({
         },
         convertTrailMessage(trail) {
             if (trail.type == 'Donation') {
-                return `${trail.info.name}이 $${trail.info.amount}를 Donate`;
+                return `${trail.info.name} donated ₩${trail.info.amount}`;
             } else if (trail.type == 'Using Donations') {
-                return `${this.recipient.name}이(가) ${trail.info.amount}을(를) ${trail.info.name}에서  ${trail.info.message}을(를) ${trail.info.purpose}하는데 사용`;
+                return `${this.recipient.name} spent ₩${trail.info.amount} ${trail.info.name} on  ${trail.info.message} buying ${trail.info.purpose}`;
             }
         },
         donate() {
