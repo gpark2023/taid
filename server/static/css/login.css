@@ -1,0 +1,70 @@
+.login-form-wrapper {
+    width: 500px;
+    margin: auto;
+}
+
+.login-form {
+    font-size: 16px;
+}
+
+.login-form label {
+    font-weight: normal;
+    margin-bottom: 7px;
+}
+
+.login-form input {
+    font-size: 16px;
+    padding-left: 10px;
+    height: 38px;
+}
+
+.login-form .form-group {
+    margin-bottom: 17px;
+}
+
+.login-body {
+    position: relative;
+    min-width: 380px;
+    -webkit-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 360px;
+    padding: 30px;
+    height: 100vh;
+}
+
+.login-heading {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.login-heading img {
+    width: 208px;
+    height: 36px;
+}
+
+.login-btn {
+    background-color: #4896e4;
+    height: 38px;
+    font-size: 16px;
+}
+
+.register-btn {
+    background-color: #2659bd;
+    border: 1px solid #2659bd;
+    height: 38px;
+    font-size: 16px;
+}
+
+#password {
+    font-family: sans-serif;
+}
