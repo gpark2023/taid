@@ -88,7 +88,7 @@
                             <div>${{recipient.current}}</div>
                         </div>
                         <div class="bar-one">
-                            <span class="percentage">{{`₩ {recipient.current / recipient.required * 100}%`}}</span>
+                            <span class="percentage">{{`${recipient.current / recipient.required * 100}%`}}</span>
                             <div class="bar" :class="`bar-20`" :data-percentage="`${recipient.current / recipient.required * 100}%`"></div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
             <hr>
             <div class="messages">
                 <div class="purpose">
-                    I need <span>${{recipient.required}}</span> <span>"{{recipient.message}}"</span>
+                    I need <span>₩{{recipient.required}}</span> <span>"{{recipient.message}}"</span>
                 </div>
                 <div class="story">
                     {{recipient.story}}
