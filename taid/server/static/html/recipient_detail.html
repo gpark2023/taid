@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TAID</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/recipient_detail.css" rel="stylesheet">
+    <link href="../lib/flaticon/font/flaticon.css" rel="stylesheet">
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">TAID (Transparent AID)</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="shop.html" class="nav-item nav-link">Shop</a>
+                    <a href="login.html" class="nav-item nav-link">Login</a>
+                    <a href="transaction.html" class="nav-item nav-link">Transactions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Nav Bar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>TAID Now</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Donate Start -->
+    <div id="app" class="container">
+        <div v-if="recipient">
+            <div class="recipient-info">
+                <div class="picture-area">
+                    <img :src="`img/recipient-${recipient.name}.jpg`" :alt="recipient.name">
+                </div>
+                <div class="info-area">
+                    <div class="name">
+                        Name: {{recipient.name}}
+                    </div>
+                    <div class="message">
+                        Age: {{recipient.age}}
+                    </div>
+                    <div class="message">
+                        Country: {{recipient.residence}}
+                    </div>
+                    <div class="coins bar-graph bar-graph-horizontal bar-graph-one">
+                        <div class="coin required">
+                            <div>Required</div>
+                            <div>₩{{recipient.required}}</div>
+                        </div>
+                        <div class="coin">
+                            <div>Current</div>
+                            <div>₩{{recipient.current}}</div>
+                        </div>
+                        <div class="bar-one">
+                            <span class="percentage">{{`${recipient.current / recipient.required * 100}%`}}</span>
+                            <div class="bar" :class="`bar-20`" :data-percentage="`${recipient.current / recipient.required * 100}%`"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="messages">
+                <div class="purpose">
+                    I need <span>₩{{recipient.required}}</span> <span>"{{recipient.message}}"</span>
+                </div>
+                <div class="story">
+                    {{recipient.story}}
+                </div>
+            </div>
+            <hr>
+            <div class="transaction-history-wrapper">
+                <div class="sub-title">
+                    Transaction Detail
+                </div>
+                <div class="donation-list">
+                    <div v-for="(trail, index) in recipient.trail">
+                        #{{index+1}}: {{convertTrailMessage(trail)}}
+                    </div>
+                </div>
+                <table class="donation-table">
+                    <thead>
+                    <tr>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Recipient
+                        </th>
+                        <th>
+                            Sender
+                        </th>
+                        <th>
+                            Amount
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="trail in recipient.trail">
+                        <td>
+                            {{trail.type}}
+                        </td>
+                        <td>
+                            {{trail.info.name}}
+                        </td>
+                        <td>
+                            {{trail.info.recipient}}
+                        </td>
+                        <td>
+                            {{trail.info.sender}}
+                        </td>
+                        <td>
+                            {{trail.info.amount}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr>
+            <div class="donate-btn-area">
+                <button @click="donate()" :disabled="recipient.donation_progress === 100">DONATE</button>
+            </div>
+        </div>
+    </div>
+    <!-- Donate End -->
+
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- Pre Loader -->
+    <div id="loader" class="show">
+        <div class="loader"></div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/parallax/parallax.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="../mail/jqBootstrapValidation.min.js"></script>
+    <script src="../mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/app.js"></script>
+    <script src="../js/recipient_detail.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

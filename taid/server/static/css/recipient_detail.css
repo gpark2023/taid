@@ -1,0 +1,205 @@
+:root{
+    --test:60%;
+}
+
+.container .recipient-info {
+    text-align: center;
+    font-size: 0;
+}
+.container .recipient-info .picture-area,
+.container .recipient-info .info-area {
+    display: inline-block;
+    vertical-align: top;
+}
+.container .recipient-info .picture-area {
+    width: 200px;
+    height: 200px
+}
+.container .recipient-info .picture-area img {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    border: 1px solid #c9c9c9;
+}
+.container .recipient-info .info-area {
+    width: calc(100% - 200px);
+    text-align: left;
+    padding-left: 100px;
+}
+.container .recipient-info .name {
+    font-size: 35px;
+}
+.container .recipient-info .message {
+    font-size: 20px;
+    color: #444444;
+}
+.container .recipient-info .coins {
+    font-size: 0;
+    margin-top: 15px;
+}
+.container .recipient-info .coins .coin {
+    display: inline-block;
+    width: 50%;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.container .recipient-info .coins .coin.required {
+    border-right: 1px solid #d9d9d9;
+}
+.container .messages {
+
+}
+.container .messages .purpose {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.container .messages .purpose span {
+    text-decoration: underline;
+}
+.container .transaction-history-wrapper .sub-title {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.donation-list {
+    margin-bottom: 30px;
+}
+.donation-table {
+    background-color: #fff;
+    margin-top: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    color: #666;
+    width: 100%;
+}
+.donation-table thead {
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+}
+.donation-table tr th, .donation-table tr td {
+    height: 50px;
+    padding: 8px 12px;
+}
+.donate-btn-area {
+
+}
+.donate-btn-area button {
+    color: #ffffff;
+    background-color: #3070ed;
+    min-width: 90px;
+    width: auto;
+    height: 40px;
+    padding: 6px 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Bar Graph Horizontal */
+.bar-graph .year {
+    -webkit-animation: fade-in-text 2.2s 0.1s forwards;
+    -moz-animation: fade-in-text 2.2s 0.1s forwards;
+    animation: fade-in-text 2.2s 0.1s forwards;
+    opacity: 0;
+}
+
+.bar-graph-horizontal {
+    max-width: 380px;
+}
+
+.bar-graph-horizontal > div.bar-one {
+    margin-top: 10px;
+    position: relative;
+    float: left;
+    margin-bottom: 8px;
+    width: 100%;
+    border: 1px  solid #c9c9c9;
+    border-radius: 8px;
+}
+
+.bar-graph-horizontal > div.bar-one .percentage {
+    position: absolute;
+    left: 20px;
+    font-size: 16px;
+    z-index: 999;
+    color: #000;
+    top: 0;
+    line-height: 55px;
+}
+
+.bar-graph-horizontal .bar {
+    border-radius: 3px;
+    height: 55px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 0;
+}
+
+.bar-graph-one .bar::after {
+    -webkit-animation: fade-in-text 2.2s 0.1s forwards;
+    -moz-animation: fade-in-text 2.2s 0.1s forwards;
+    animation: fade-in-text 2.2s 0.1s forwards;
+    color: #fff;
+    content: attr(data-percentage);
+    font-weight: 700;
+    position: absolute;
+    right: 16px;
+    top: 17px;
+}
+
+.bar-graph-one .bar-one .bar {
+    background-color: #64b2d1;
+}
+.bar-graph-one .bar-one .bar.bar-20 {
+    -webkit-animation: bar-20 1.2s 0.1s forwards;
+    -moz-animation: bar-20 1.2s 0.1s forwards;
+    animation: bar-20 1.2s 0.1s forwards;
+}
+.bar-graph-one .bar-one .bar.bar-50 {
+    -webkit-animation: bar-50 1.2s 0.1s forwards;
+    -moz-animation: bar-50 1.2s 0.1s forwards;
+    animation: bar-50 1.2s 0.1s forwards;
+}
+.bar-graph-one .bar-one .bar.bar-100 {
+    -webkit-animation: bar-100 1.2s 0.1s forwards;
+    -moz-animation: bar-100 1.2s 0.1s forwards;
+    animation: bar-100 1.2s 0.1s forwards;
+}
+
+/* Bar Graph Horizontal Animations */
+@-webkit-keyframes bar-20 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: var(--test);
+    }
+}
+
+@-webkit-keyframes bar-50 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 50%;
+    }
+}
+
+@-webkit-keyframes bar-100 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes fade-in-text {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

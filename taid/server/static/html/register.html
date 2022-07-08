@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>TAID</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="../css/login.css" rel="stylesheet">
+        <link href="../css/register.css" rel="stylesheet">
+        <link href="../lib/flaticon/font/flaticon.css" rel="stylesheet">
+        <link href="../lib/animate/animate.min.css" rel="stylesheet">
+        <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">TAID (Transparent AID)</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="shop.html" class="nav-item nav-link">Shop</a>
+                        <a href="login.html" class="nav-item nav-link">Login</a>
+                        <a href="transaction.html" class="nav-item nav-link">Transactions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>REGISTER</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+        <!-- Loginm Start -->
+        <div id="app" class="container">
+            <div class="login-form-wrapper">
+                <div name="register-form">
+                    <div class="form-group type-selection">
+                        <div class="type-wrapper">
+                            <label for="donor">
+                                Donor
+                                <input id="donor" type="radio" name="userType" value="1" v-model="type" />
+                            </label>
+                        </div>
+                        <div class="type-wrapper">
+                            <label for="recipient">
+                                Recipient
+                                <input id="recipient" type="radio" name="userType" value="2" v-model="type" />
+                            </label>
+                        </div>
+                        <div class="type-wrapper">
+                            <label for="shop">
+                                Shop
+                                <input id="shop" type="radio" name="userType" value="3" v-model="type" />
+                            </label>
+                        </div>
+                    </div>
+                    <template v-if="type == 2">
+                        <div class="sub-section">1. Who Am I</div>
+                        <div class="form-group">
+                            <label class="control-label">
+                                Name
+                            </label>
+                            <input id="name" class="form-control" type="text" name="name" placeholder="Name" v-model="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">
+                                ID
+                            </label>
+                            <input id="id" class="form-control" type="text" name="id" placeholder="ID" v-model="id">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="control-label">
+                                Password
+                            </label>
+                            <input id="password" class="form-control" type="password" name="password" placeholder="P/W" v-model="pwd">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">
+                                Age
+                            </label>
+                            <input id="age" class="form-control" type="text" name="age" placeholder="Age" v-model="age">
+                        </div>
+                        <div class="form-group">
+                            <label for="residence" class="control-label">
+                                Residence
+                            </label>
+                            <input id="residence" class="form-control" type="text" name="residence" placeholder="Residence" v-model="residence">
+                        </div>
+                        <div class="form-group">
+                            <label for="residence" class="control-label">
+                                Picture
+                            </label>
+                            <input id="picture" class="form-control" type="file" accept=".jpg, .jpeg, .png" name="picture">
+                        </div>
+                        <hr>
+                        <div class="sub-section">2. What Do I Need?</div>
+                        <div class="form-group">
+                            <input id="item" class="form-control" type="text" name="item" placeholder="What Do I Need" v-model="neededItem">
+                        </div>
+                        <div class="sub-section">3. Why Do I Need It? How Will It Make My Life Better?</div>
+                        <div class="form-group">
+                            <textarea id="story" class="form-control" name="story" placeholder="Why Do I Need It" v-model="story"></textarea>
+                        </div>
+                        <div class="sub-section">4. Where Will I Use It?</div>
+                        <div class="form-group">
+                            <textarea id="purpose" class="form-control" name="purpose" placeholder="Why Do I Need It" v-model="purpose"></textarea>
+                        </div>
+                        <hr>
+                        <div class="sub-section">5. How Much Do I Need?</div>
+                            <input id="amountNeeded" class="form-control" type="text" name="amountNeeded" placeholder="Amount($)" v-model="amountNeeded">
+                        </div>
+
+                    </template>
+                    <template v-else>
+                        <div class="form-group">
+                            <label class="control-label">
+                                Name
+                            </label>
+                            <input id="name" class="form-control" type="text" name="name" placeholder="Name" v-model="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">
+                                ID
+                            </label>
+                            <input id="id" class="form-control" type="text" name="id" placeholder="ID" v-model="id">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="control-label">
+                                Password
+                            </label>
+                            <input id="password" class="form-control" type="password" name="password" placeholder="P/W" v-model="pwd">
+                        </div>
+                        <div v-if="type == 1" class="form-group type-selection">
+                            <label class="control-label custom-label">
+                                Anonymity
+                            </label>
+                            <div class="type-wrapper">
+                                <label for="anonymity-y">
+                                    Yes
+                                    <input id="anonymity-y" type="radio" name="anonymity" value="1" v-model="anonymity" />
+                                </label>
+                            </div>
+                            <div class="type-wrapper">
+                                <label for="anonymity-n">
+                                    No
+                                    <input id="anonymity-n" type="radio" name="anonymity" value="0" v-model="anonymity" />
+                                </label>
+                            </div>
+                        </div>
+                        <div v-if="type == 3" class="form-group">
+                            <label for="region" class="control-label">
+                                Region
+                            </label>
+                            <input id="region" class="form-control" type="text" name="region" placeholder="Region" v-model="region">
+                        </div>
+                        <div v-if="type == 3" class="form-group goods" v-for="(good, index) in goods">
+                            <label class="control-label">
+                                Goods
+                            </label>
+                            <input class="form-control good" type="text" name="goods-name" placeholder="name" v-model="good.name">
+                            <input class="form-control good" type="text" name="goods-price" placeholder="price" v-model="good.price">
+                            <button @click="removeGoods(index)">- Remove</button>
+                            <button v-if="index === goods.length - 1" @click="addGoods()">+ Add</button>
+                        </div>
+                    </template>
+                    <div class="form-group">
+                        <button id="btn-register" class="register-btn btn btn-primary btn-block" @click="register">
+                            Register
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login End -->
+
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- Pre Loader -->
+        <div id="loader" class="show">
+            <div class="loader"></div>
+        </div>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="../lib/easing/easing.min.js"></script>
+        <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="../lib/waypoints/waypoints.min.js"></script>
+        <script src="../lib/counterup/counterup.min.js"></script>
+        <script src="../lib/parallax/parallax.min.js"></script>
+
+        <!-- Contact Javascript File -->
+        <script src="../mail/jqBootstrapValidation.min.js"></script>
+        <script src="../mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="../js/app.js"></script>
+        <script src="../js/register.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+</html>

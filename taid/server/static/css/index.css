@@ -1,0 +1,34 @@
+.recipients {
+    padding: 0 50px 30px;
+    border-bottom: 1px solid #c9c9c9;
+}
+.recipients .sub-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.recipients .recipient {
+    display: inline-block;
+    width: calc((100% - 16px)/3);
+    height: 200px;
+    margin-right: 8px;
+    text-align: center;
+}
+.recipients .recipient:last-child {
+    margin-right: 0;
+}
+.recipients .recipient img {
+    border: 1px solid #c9c9c9;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.recipients .recipient .recipient-name {
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 800;
+}
+.recipients .recipient .recipient-name:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

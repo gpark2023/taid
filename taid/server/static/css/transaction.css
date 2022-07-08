@@ -1,0 +1,11 @@
+.title {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+table.donation-table tbody tr td.wallet span {
+    cursor: pointer;
+}
+table.donation-table tbody tr td.wallet span:hover {
+    text-decoration: underline;
+}

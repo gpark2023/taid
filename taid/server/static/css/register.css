@@ -1,0 +1,21 @@
+.login-form-wrapper .type-selection .type-wrapper {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.login-form-wrapper .type-selection label.custom-label {
+    margin-right: 30px;
+}
+
+.login-form-wrapper .goods input {
+    display: inline-block;
+    width: 100px;
+}
+.sub-section {
+    font-size: 18px;
+    color: #222222;
+    margin-bottom: 5px;
+}
+textarea {
+    height: 165px!important;
+}

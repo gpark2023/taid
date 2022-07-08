@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TAID</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/recipient_detail.css" rel="stylesheet">
+    <link href="../css/wallet_transaction.css" rel="stylesheet">
+    <link href="../lib/flaticon/font/flaticon.css" rel="stylesheet">
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+<!-- Nav Bar Start -->
+<div class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">TAID (Transparent AID)</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="shop.html" class="nav-item nav-link">Shop</a>
+                <a href="login.html" class="nav-item nav-link">Login</a>
+                <a href="transaction.html" class="nav-item nav-link">Transactions</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Nav Bar End -->
+
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Transaction</h2>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Donate Start -->
+<div id="app" class="container">
+    <div>
+        <div class="wallet-transaction title">
+            Wallet Activity
+        </div>
+        <div class="wallet-address">
+            Wallet Address: {{walletAddress}}
+        </div>
+        <hr>
+        <div class="transaction-history-wrapper">
+            <div class="sub-title">
+                Transaction Detail
+            </div>
+            <table class="donation-table">
+                <thead>
+                <tr>
+                    <th rowspan="2">
+                        Index
+                    </th>
+                    <th rowspan="2">
+                        Type
+                    </th>
+                    <th rowspan="2">
+                        Amount
+                    </th>
+                    <th rowspan="2">
+                        Information
+                    </th>
+                    <th rowspan="2">
+                        Recipient
+                    </th>
+                    <th rowspan="2">
+                        Sender
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                    <template v-for="transaction in transactions">
+                        <tr>
+                            <td rowspan="2">
+                                {{transaction.index}}
+                            </td>
+                            <td rowspan="2">
+                                {{transaction.type}}
+                            </td>
+                            <td rowspan="2">
+                                {{transaction.amount}}
+                            </td>
+                            <td>
+                                Purpose: {{transaction.purpose}}
+                            </td>
+                            <td rowspan="2">
+                                {{transaction.recipient}}
+                            </td>
+                            <td rowspan="2">
+                                {{transaction.sender}}
+                            </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #c9c9c9;">
+                            <td>
+                                Message: {{transaction.message}}
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Donate End -->
+
+
+<!-- Back to top button -->
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- Pre Loader -->
+<div id="loader" class="show">
+    <div class="loader"></div>
+</div>
+
+<!-- JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="../lib/easing/easing.min.js"></script>
+<script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="../lib/waypoints/waypoints.min.js"></script>
+<script src="../lib/counterup/counterup.min.js"></script>
+<script src="../lib/parallax/parallax.min.js"></script>
+
+<!-- Contact Javascript File -->
+<script src="../mail/jqBootstrapValidation.min.js"></script>
+<script src="../mail/contact.js"></script>
+
+<!-- Template Javascript -->
+<script src="../js/app.js"></script>
+<script src="../js/wallet.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
