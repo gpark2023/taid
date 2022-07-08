@@ -27,8 +27,8 @@ class Blockchain:
             "timestamp": 1640696963.556868,
             "transactions": [
                 {
-                    "amount": 5,
-                    "message": "Water at Amazon",
+                    "amount": 370000,
+                    "message": "Rice",
                     "purpose": "Donation Request",
                     "recipient": "0",
                     "sender": "c274f599a24f41d797a60d63f356e26b"
@@ -42,8 +42,8 @@ class Blockchain:
             "timestamp": 1640696993.744761,
             "transactions": [
                 {
-                    "amount": 7,
-                    "message": "Bread at Amazon",
+                    "amount": 80000,
+                    "message": "Toilet Paper",
                     "purpose": "Donation Request",
                     "recipient": "0",
                     "sender": "5f979dfb57624830a91dd6dda787d12f"
